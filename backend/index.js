@@ -10,6 +10,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.use('/auth', authRoutes);
 
 app.listen(process.env.PORT, (err)=>{
   if(err) throw err;
