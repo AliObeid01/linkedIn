@@ -30,6 +30,12 @@ const followCompany= async (req, res) => {
   res.json({message: "Company has been followed"});
 }
 
+const applyJob= async (req, res) => {
+  const job_id = req.body.job_id;
+  await Job.findByIdAndUpdate(job_id, {$push: {applicants: req.user._id}});
+  res.json({message: "Apply success"});
+}
+
 module.exports = {
   getUser,
   followCompany,
