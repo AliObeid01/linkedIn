@@ -7,6 +7,12 @@ const getCompany = async (req, res) => {
   res.json(company);
 }
 
+const editProfileCompany = async (req, res) => {
+  const {name,aboutus,address} = req.body
+  await Company.findByIdAndUpdate(req.company._id, {name:name,about_us:aboutus,address:address});
+  res.json({message: "Profile has been edited"});
+}
+
 module.exports = {
   getCompany,
   addJob,
