@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-
+const bodyParser = require('body-parser');
+const authRoutes = require('./routes/auth.routes');
+const usersRoutes = require('./routes/users.routes');
 
 require('dotenv').config();
 require('./config/db.config')
@@ -13,6 +15,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/auth', authRoutes);
+app.use('/user', usersRoutes);
 
 app.listen(process.env.PORT, (err)=>{
   if(err) throw err;
