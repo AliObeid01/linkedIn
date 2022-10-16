@@ -13,6 +13,11 @@ const editProfileCompany = async (req, res) => {
   res.json({message: "Profile has been edited"});
 }
 
+const getCompanyJobs = async (req, res) => {
+  const company_jobs = await Company.find(req.company._id).populate("jobs");
+  res.json(company_jobs);
+}
+
 module.exports = {
   getCompany,
   addJob,
