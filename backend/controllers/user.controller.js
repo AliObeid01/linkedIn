@@ -12,6 +12,11 @@ const getCompanies = async (req, res) => {
   res.json({data: companies})
 }
 
+const getFollowedCompanies = async (req, res) => {
+  const followed_companies = await User.findById(req.user._id).populate("following");
+  res.json({data: followed_companies});
+}
+
 module.exports = {
   getUser,
   followCompany,
