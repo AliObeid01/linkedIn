@@ -7,6 +7,11 @@ const getUser = async (req, res) => {
   res.json(user);
 }
 
+const getCompanies = async (req, res) => {
+  const companies = await Company.find().lean();
+  res.json({data: companies})
+}
+
 module.exports = {
   getUser,
   followCompany,
