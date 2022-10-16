@@ -40,6 +40,12 @@ const getJobs = async (req, res) => {
   res.json({data: jobs})
 }
 
+const getfollowedJobs = async (req, res) => {
+  const  followed_jobs= await User.findById(req.user._id).populate([{ path: 'following', populate: { path: 'jobs' }}]);
+  res.json({data: followed_jobs});
+}
+
+
 module.exports = {
   getUser,
   followCompany,
