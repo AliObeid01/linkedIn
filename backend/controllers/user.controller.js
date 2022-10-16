@@ -23,6 +23,13 @@ const editProfile = async (req, res) => {
   res.json({message: "Profile has been edited"});
 }
 
+const followCompany= async (req, res) => {
+  const company_id = req.body.company_id;
+  await User.findByIdAndUpdate(req.user._id, {$push: {following: company_id}});
+  await Company.findByIdAndUpdate(company_id , {$push: {followers: req.user._id}});
+  res.json({message: "Company has been followed"});
+}
+
 module.exports = {
   getUser,
   followCompany,
