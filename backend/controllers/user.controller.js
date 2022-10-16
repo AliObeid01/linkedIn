@@ -45,6 +45,10 @@ const getfollowedJobs = async (req, res) => {
   res.json({data: followed_jobs});
 }
 
+const getUnfollowedCompany = async (req, res) => {
+  const unfollowed_companies = await Company.find({_id: {$nin: [req.user.following]}});
+  res.json({data: unfollowed_companies});
+}
 
 module.exports = {
   getUser,
