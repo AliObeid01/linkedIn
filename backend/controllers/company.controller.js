@@ -18,6 +18,11 @@ const getCompanyJobs = async (req, res) => {
   res.json(company_jobs);
 }
 
+const getApplicants= async (req, res) => {
+  const  applicants= await Company.findById(req.company._id).populate([{ path: 'jobs', populate: { path: 'applicants' }}]);
+  res.json(applicants);
+}
+
 module.exports = {
   getCompany,
   addJob,
