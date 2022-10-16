@@ -23,6 +23,16 @@ const getApplicants= async (req, res) => {
   res.json(applicants);
 }
 
+const addJob = async (req, res) => {
+  const {title, description} = req.body;
+  const job = new Job();
+  job.title = title;
+  job.job_description = description;
+  await job.save();
+  await Company.findByIdAndUpdate(req.company._id, {$push: {jobs: job._id}});
+  res.json({data: job});
+}
+
 module.exports = {
   getCompany,
   addJob,
