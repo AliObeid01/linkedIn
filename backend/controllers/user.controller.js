@@ -35,6 +35,10 @@ const applyJob= async (req, res) => {
   await Job.findByIdAndUpdate(job_id, {$push: {applicants: req.user._id}});
   res.json({message: "Apply success"});
 }
+const getJobs = async (req, res) => {
+  const jobs = await Job.find().lean();
+  res.json({data: jobs})
+}
 
 module.exports = {
   getUser,
