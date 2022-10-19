@@ -12,6 +12,7 @@ import './App.scss';
 //ROUTES
 const Login = React.lazy(() => import('./Containers/Login/Login'));
 const Home = React.lazy(() => import('./Containers/Home/Home'));
+const Following = React.lazy(() => import('./Containers/Following/Following'));
 
 function App() {
 
@@ -49,13 +50,17 @@ function App() {
                     (userType === 1 ? <Redirect to='Home' /> : <Redirect to='Admin' />)
                   }
                 </Route>
-                
+
                 {/* HOME */}
                 <Route path='/Home' render={() => <Home />} >
                   {userType !== 1 && <Redirect to='/' />}
                 </Route>
 
-
+                {/* FOLLOWING */}
+                <Route path='/Following' render={() => <Following />} >
+                  {userType !== 1 && <Redirect to='/' />}
+                </Route>
+                
               </Switch>
           </Router>
         </React.Suspense>
