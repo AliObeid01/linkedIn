@@ -1,0 +1,42 @@
+@import './assets/variables';
+
+.App {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+}
+body {
+  background-color: $body_background;
+}
+//PREVENT SIZE CHANGE ON PADDING
+* { 
+  -moz-box-sizing: border-box !important; 
+  -webkit-box-sizing: border-box !important; 
+  box-sizing: border-box !important; 
+}
+
+//CHANGE TEXT IN AUTOFILL TEXTBOX
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+//HIDE SCROLLBAR FOR CHROME, SAFARI AND OPERA
+// *::-webkit-scrollbar {
+//   display: none;
+// }
+
+// //HIDE SCROLLBAR FOR IE, EDGE AND FIREFOX
+// * {
+//   -ms-overflow-style: none;  //IE and Edge
+//   scrollbar-width: none;  //Firefox
+// }
