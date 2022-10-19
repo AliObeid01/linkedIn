@@ -13,6 +13,7 @@ import './App.scss';
 const Login = React.lazy(() => import('./Containers/Login/Login'));
 const Home = React.lazy(() => import('./Containers/Home/Home'));
 const Following = React.lazy(() => import('./Containers/Following/Following'));
+const Admin = React.lazy(() => import('./Containers/Admin/Admin'));
 
 function App() {
 
@@ -59,6 +60,11 @@ function App() {
                 {/* FOLLOWING */}
                 <Route path='/Following' render={() => <Following />} >
                   {userType !== 1 && <Redirect to='/' />}
+                </Route>
+
+                {/* ADMIN */}
+                <Route path='/Admin' render={() => <Admin />} >
+                  {userType !== 2 && <Redirect to='/' />}
                 </Route>
                 
               </Switch>
