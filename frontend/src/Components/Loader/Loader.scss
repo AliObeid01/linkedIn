@@ -1,0 +1,35 @@
+@import '../../assets/variables';
+
+.default {
+    z-index: 101 ;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background_transparent;
+}
+.loaderSignIn {
+    z-index: 101;
+    bottom: 0px;
+    position: absolute;
+    width: 100vw;
+    height: calc(100vh - 100px);
+    padding-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background_transparent;
+}
+.loaderHome {
+    z-index: 101;
+    top: 70px;
+    position: absolute;
+    width: 100vw;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background_transparent;
+}
