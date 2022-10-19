@@ -11,7 +11,7 @@ import './App.scss';
 
 //ROUTES
 const Login = React.lazy(() => import('./Containers/Login/Login'));
-
+const Home = React.lazy(() => import('./Containers/Home/Home'));
 
 function App() {
 
@@ -49,7 +49,11 @@ function App() {
                     (userType === 1 ? <Redirect to='Home' /> : <Redirect to='Admin' />)
                   }
                 </Route>
-
+                
+                {/* HOME */}
+                <Route path='/Home' render={() => <Home />} >
+                  {userType !== 1 && <Redirect to='/' />}
+                </Route>
 
 
               </Switch>
