@@ -14,6 +14,7 @@ const Login = React.lazy(() => import('./Containers/Login/Login'));
 const Home = React.lazy(() => import('./Containers/Home/Home'));
 const Following = React.lazy(() => import('./Containers/Following/Following'));
 const Admin = React.lazy(() => import('./Containers/Admin/Admin'));
+const PageNotFound = React.lazy(() => import('./Components/PageNotFound/PageNotFound'));
 
 function App() {
 
@@ -67,6 +68,9 @@ function App() {
                   {userType !== 2 && <Redirect to='/' />}
                 </Route>
                 
+                {/* 404 */}
+                <Route path='/*' render={() => <PageNotFound />} />
+
               </Switch>
           </Router>
         </React.Suspense>
