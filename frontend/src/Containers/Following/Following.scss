@@ -1,0 +1,161 @@
+@import '../../assets/variables';
+
+.followingCon {
+    width: calc(100vw - 17px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    
+    .following {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 10px;
+        
+        .comPanelCon {
+            flex: 2;
+            height: 500px;
+            padding: 10px;
+
+            .comPanel {
+                width: 100%;
+                height: 100%;
+                padding-top: 10px;
+                border-radius: 10px;
+                background-color: $componentsBackground;
+
+                .comPanelHeader {
+                    width: 100%;
+                    height: 50px;
+                    
+                    p {
+                        font-size: 14px;
+                        text-align: left;
+                        padding-left: 20px;
+                    }
+                }
+                .companyCon {
+                    width: 100%;
+                    height: 100px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 20px;
+
+                    .companyImgCon {
+                        flex: 1;
+                        height: 100%;
+                        display: flex;
+                        align-items: flex-start;
+
+                        img {
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 30px;
+                        }
+                    }
+                    .companyInfoCon {
+                        flex: 4;
+                        height: 100%;
+                        
+                        .companyName {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            height: 10px;
+
+                            p {
+                                font-size: 14px;
+                                text-align: left;
+                            }
+                        }
+                        .companyDisc {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                            height: 80px;
+                            
+                            p {
+                                height: 100%;
+                                font-size: 12px;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .jobsPanelCon {
+            flex: 4;
+            height: 500px;
+            padding: 10px;
+
+            .jobsPanel {
+                width: 100%;
+                height: 100%;
+                padding-top: 10px;
+                border-radius: 10px;
+                background-color: $componentsBackground;
+
+                .jobsPanelHeader {
+                    width: 100%;
+                    height: 50px;
+                    
+                    p {
+                        font-size: 14px;
+                        text-align: left;
+                        padding-left: 20px;
+                    }
+                }
+                .jobCon {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 20px;
+
+                    .jobInfoCon {
+                        flex: 1;
+                        
+                        .jobName {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            height: 10px;
+
+                            p {
+                                font-size: 14px;
+                                text-align: left;
+                            }
+                        }
+                        .jobDisc {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                            
+                            p {
+                                height: 100%;
+                                font-size: 12px;
+                                text-align: left;
+                            }
+                        }
+                    }
+                    .applyBtnCon {
+                        height: 100%;
+
+                        button {
+                            width: 100px;
+                            height: 32px;
+                            border-radius: 16px;
+                            background-color: transparent;
+                            border: 1px solid $button_background;
+                            color: $button_background;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
